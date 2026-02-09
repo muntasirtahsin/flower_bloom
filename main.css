@@ -610,8 +610,7 @@ body {
   border-top-left-radius: 100%;
   border-left: 2vmin solid #217005;
   background-image: linear-gradient(to bottom, transparent, var(--dark-color) 60%);
-  webkit-mask
-  webkit-mask-image: linear-gradient(to top,transparent 30%,#24803e 60% );
+  -webkit-mask-image: linear-gradient(to top, transparent 30%, #24803e 60% );
 }
 .flower__g-right--1 {
   -webkit-animation: flower-g-right-ans 2.5s linear infinite;
@@ -804,7 +803,7 @@ body {
 .flower__g-fr {
   position: absolute;
   bottom: -4vmin;
-  left: vmin;
+  left: 1vmin;
   transform-origin: bottom left;
   z-index: 10;
   -webkit-animation: flower__g-fr-ans 2s linear infinite;
