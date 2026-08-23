@@ -732,7 +732,7 @@ body {
     transform: rotateY(-180deg) scale(0);
   }
 }
-@keyframes flower__g-front__leaf-left-ans-2 {
+@keyframes flower__g-front-leaf-left-ans-2 {
   0% {
     transform: rotateY(-180deg) scale(0);
   }
@@ -1329,10 +1329,10 @@ body {
           animation-play-state: paused !important;
 }
 
-/* Original Desktop Header & Title Styles */
+/* Desktop Header & Title Styles (Reduced to avoid flower overlap) */
 .hero {
   position: absolute;
-  top: 6vmin;
+  top: 3.5vmin;
   left: 50%;
   transform: translateX(-50%);
   z-index: 60;
@@ -1344,9 +1344,9 @@ body {
 
 .title {
   font-family: "Arial Black", system-ui, -apple-system, "Helvetica Neue", Arial;
-  font-size: 6vmin;
+  font-size: clamp(1.8rem, 3.4vw, 3.8rem);
   color: #ffffff;
-  letter-spacing: 0.5vmin;
+  letter-spacing: 0.3vmin;
   text-shadow: 0 0 1vmin #01a5b4, 0 0 2vmin #01a5b4;
   animation: pulse 2.2s ease-in-out infinite, glow 3.5s ease-in-out infinite;
   text-align: center;
@@ -1397,7 +1397,7 @@ body {
   }
 }
 
-/* Mobile-Only Overrides (Enlarges flowers to fill screen height and scales title to fit phone width) */
+/* Mobile-Only Overrides */
 @media (max-width: 768px) {
   body {
     align-items: flex-end;
@@ -1410,7 +1410,7 @@ body {
   }
 
   .title {
-    font-size: clamp(2rem, 9.5vw, 3.2rem);
+    font-size: clamp(2.2rem, 9.5vw, 3.4rem);
     white-space: nowrap;
   }
 
