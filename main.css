@@ -1400,26 +1400,51 @@ body {
   }
 }
 
-/* Responsive Scaling for Mobile Screens */
+/* Responsive Mobile Fit: Scale flowers up to match the full screen height */
 @media (max-width: 768px) {
-  .flowers {
-    /* Enlarges bouquet proportionally to fill narrow/tall mobile viewports */
-    transform: scale(clamp(1.25, 0.35vw + 1.1vh, 1.65));
-    bottom: -2dvh;
+  body {
+    align-items: flex-end;
   }
-  
+
+  .hero {
+    top: clamp(2.5rem, 8dvh, 5rem);
+    width: 100%;
+    padding: 0 1rem;
+  }
+
   .title {
-    font-size: clamp(1.8rem, 8.5vw, 3rem);
-    white-space: normal; /* Prevents overflow if words wrap */
+    /* Larger title that stays on a single line */
+    font-size: clamp(2.2rem, 9.5vw, 3.4rem);
+    white-space: nowrap;
+  }
+
+  .flowers {
+    /* Scale using vh so the bouquet grows tall to cover the vertical screen space */
+    transform: scale(calc(100vh / 600)) !important;
+    transform-origin: bottom center;
+    bottom: 2dvh;
   }
 }
 
-/* Extra adjustments for short landscape mobile viewports */
-@media (max-height: 550px) {
+/* Very tall/narrow phone aspect ratios (e.g. 19.5:9 or 20:9) */
+@media (max-width: 500px) and (min-aspect-ratio: 1/2) {
   .flowers {
-    transform: scale(0.8);
-    bottom: -8dvh;
+    transform: scale(calc(100vh / 560)) !important;
+    bottom: 3dvh;
   }
+  
+  .hero {
+    top: 6dvh;
+  }
+}
+
+/* Landscape / short mobile screens */
+@media (max-height: 500px) {
+  .flowers {
+    transform: scale(0.65) !important;
+    bottom: -5dvh;
+  }
+  
   .title {
     font-size: 1.8rem;
   }
