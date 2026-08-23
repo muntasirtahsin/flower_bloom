@@ -15,9 +15,12 @@ body {
   align-items: flex-end;
   justify-content: center;
   min-height: 100vh;
+  min-height: 100dvh;
+  width: 100vw;
   background-color: var(--dark-color);
   overflow: hidden;
   perspective: 1000px;
+  position: relative;
 }
 
 .night {
@@ -29,14 +32,19 @@ body {
   height: 100%;
   filter: blur(0.1vmin);
   background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)), 
-  radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)), repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px,
-   rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
-    repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(7, 107, 42), rgb(240, 240, 240));
+    radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)), 
+    repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), 
+    repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
+    repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), 
+    linear-gradient(90deg, rgb(7, 107, 42), rgb(240, 240, 240));
 }
 
 .flowers {
   position: relative;
   transform: scale(0.9);
+  transform-origin: bottom center;
+  bottom: 0;
+  z-index: 10;
 }
 
 .flower {
@@ -210,18 +218,7 @@ body {
   width: 60%;
   height: 60%;
   border-radius: inherit;
-  background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px,
-   transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px,
-    transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px),
-     repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px),
-       repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px,
-        rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), 
-        repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, 
-        rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px),
-         repeating-linear-gradient(157.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px,
-          rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px),
-           linear-gradient(90deg, rgb(127, 47, 21), rgb(255, 206, 0));
+  background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(127, 47, 21), rgb(255, 206, 0));
 }
 
 .flower__line {
@@ -602,7 +599,6 @@ body {
   left: -2vmin;
   transform-origin: bottom left;
   transform: rotate(20deg);
-  
 }
 .flower__g-right .leaf {
   width: 30vmin;
@@ -736,7 +732,7 @@ body {
     transform: rotateY(-180deg) scale(0);
   }
 }
-@keyframes flower__g-front__leaf-left-ans-2 {
+@keyframes flower__g-front-leaf-left-ans-2 {
   0% {
     transform: rotateY(-180deg) scale(0);
   }
@@ -1082,7 +1078,6 @@ body {
     transform: rotate(5deg) scale(1.1);
   }
 }
-
 @keyframes leaf-ans-1 {
   0%, 100% {
     transform: rotate(-5deg) scale(1);
@@ -1134,7 +1129,6 @@ body {
     opacity: 0;
   }
 }
-
 @keyframes grow-ans {
   0% {
     transform: scale(0);
@@ -1325,7 +1319,6 @@ body {
     transform: scale(0);
   }
 }
-
 @keyframes growing-grass-ans {
   0% {
     transform: scale(0);
@@ -1336,28 +1329,32 @@ body {
           animation-play-state: paused !important;
 }
 
-/* Header styles for Valentine's message */
+/* Header & Title fitting */
 .hero {
   position: absolute;
-  top: 6vmin;
+  top: clamp(2rem, 6dvh, 5rem);
   left: 50%;
   transform: translateX(-50%);
+  width: 92%;
+  max-width: 900px;
   z-index: 60;
   text-align: center;
   pointer-events: none;
   opacity: 0;
-  animation: header-fade 1s ease-in-out 2s forwards;
+  animation: header-fade 1.2s ease-in-out 1.8s forwards;
 }
+
 .title {
   font-family: "Arial Black", system-ui, -apple-system, "Helvetica Neue", Arial;
-  font-size: 6vmin;
+  font-size: clamp(2rem, 8vw, 4.8rem);
+  width: 100%;
+  display: block;
+  white-space: nowrap;
+  letter-spacing: clamp(1px, 0.4vw, 4px);
   color: #ffffff;
-  letter-spacing: 0.5vmin;
-  text-shadow: 0 0 1vmin #01a5b4, 0 0 2vmin #01a5b4;
+  text-shadow: 0 0 10px #01a5b4, 0 0 25px #01a5b4;
   animation: pulse 2.2s ease-in-out infinite, glow 3.5s ease-in-out infinite;
   text-align: center;
-  display: inline-block;
-  
 }
 
 @keyframes glow {
@@ -1369,9 +1366,8 @@ body {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.35); }
 }
-
 @keyframes header-fade {
-  0% { opacity: 0; transform: translateX(-50%) translateY(-0.6vmin) scale(0.995); }
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px) scale(0.98); }
   100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
 }
 
@@ -1401,5 +1397,30 @@ body {
   100% {
     transform: translateY(-26vmin) translateX(calc(var(--drift) * 1.5)) scale(0.9);
     opacity: 0;
+  }
+}
+
+/* Responsive Scaling for Mobile Screens */
+@media (max-width: 768px) {
+  .flowers {
+    /* Enlarges bouquet proportionally to fill narrow/tall mobile viewports */
+    transform: scale(clamp(1.25, 0.35vw + 1.1vh, 1.65));
+    bottom: -2dvh;
+  }
+  
+  .title {
+    font-size: clamp(1.8rem, 8.5vw, 3rem);
+    white-space: normal; /* Prevents overflow if words wrap */
+  }
+}
+
+/* Extra adjustments for short landscape mobile viewports */
+@media (max-height: 550px) {
+  .flowers {
+    transform: scale(0.8);
+    bottom: -8dvh;
+  }
+  .title {
+    font-size: 1.8rem;
   }
 }
